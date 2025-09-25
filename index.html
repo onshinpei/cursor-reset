@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>扫雷 Minesweeper</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1>扫雷</h1>
+      <div class="stats">
+        <div class="stat"><span>雷数</span><strong id="mineCount">0</strong></div>
+        <button id="resetBtn" class="reset" aria-label="重来">🙂</button>
+        <div class="stat"><span>时间</span><strong id="timer">000</strong></div>
+      </div>
+    </header>
+
+    <section class="controls">
+      <label>
+        难度
+        <select id="difficulty">
+          <option value="beginner">初级 (9×9, 10 雷)</option>
+          <option value="intermediate">中级 (16×16, 40 雷)</option>
+          <option value="expert">高级 (16×30, 99 雷)</option>
+          <option value="custom">自定义</option>
+        </select>
+      </label>
+      <label>行<input id="rowsInput" type="number" min="5" max="50" value="9" /></label>
+      <label>列<input id="colsInput" type="number" min="5" max="60" value="9" /></label>
+      <label>雷<input id="minesInput" type="number" min="1" max="500" value="10" /></label>
+      <button id="newGameBtn" class="primary">开始新局</button>
+    </section>
+
+    <main>
+      <div id="board" class="board" role="grid" aria-label="扫雷棋盘"></div>
+    </main>
+
+    <footer class="footer">
+      <span>左键：翻开 | 右键：标记 | 双击：快速展开</span>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+  <noscript>需要启用 JavaScript 才能玩扫雷。</noscript>
+</body>
+</html>
+
